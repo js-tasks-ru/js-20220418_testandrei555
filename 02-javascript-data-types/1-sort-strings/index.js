@@ -7,10 +7,10 @@
 export function sortStrings(arr, param = 'asc') {
    let arrCopy = [...arr];
    if (param === "asc") {
-      arrCopy.sort((a, b) => a.localeCompare(b, "kf", {caseFirst: "upper"}));
+      arrCopy.sort((a, b) => a.localeCompare(b, ["ru", "en"], {caseFirst: "upper"}));
    }
    if (param === "desc") {
-      arrCopy.sort((a, b) => b.localeCompare(a));
+      arrCopy.sort((a, b) => b.localeCompare(a, ["ru", "en"]));
    }
    return arrCopy;
 }
